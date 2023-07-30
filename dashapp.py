@@ -36,7 +36,7 @@ data = my_file.read()
   
 # replacing end of line('/n') with ' ' and
 # splitting the text it further when '.' is seen.
-stopwords = data.replace('\n', ' ').split(" ")
+stop_words = data.replace('\n', ' ').split(" ")
 
 # printing the data
 
