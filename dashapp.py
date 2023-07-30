@@ -77,7 +77,25 @@ def makepred(input_text):
     input_sequence = tokenizer.texts_to_sequences(input_text)
 
     # Pad the input sequence to make it the same length as the training data
-    padded_input_sequence = input_sequence
+    
+    padded_input_sequence = [0] * maxlen
+
+    # Get the original sequence
+    original_sequence = input_sequence
+
+    # Calculate the length of the original sequence
+    seq_length = len(original_sequence)
+
+# If the original sequence is longer than maxlen, truncate it
+    if seq_length > maxlen:
+      original_sequence = original_sequence[:maxlen]
+      seq_length = maxlen
+
+# Fill the padded_input_sequence with the original sequence
+    padded_input_sequence[:seq_length] = original_sequence
+    
+  
+  
 
     # Load the saved model
 
