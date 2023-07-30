@@ -29,6 +29,18 @@ from keras.layers import Dense, Dropout, Activation, Embedding, Flatten, LSTM,Bi
 from nltk.corpus import stopwords
 import re
 from nltk.tokenize import word_tokenize 
+my_file = open("stopwords.txt", "r")
+  
+# reading the file
+data = my_file.read()
+  
+# replacing end of line('/n') with ' ' and
+# splitting the text it further when '.' is seen.
+stopwords = data.replace('\n', ' ').split(" ")
+
+# printing the data
+
+my_file.close()
 max_words = 10000
 maxlen = 20
 tokenizer = Tokenizer(num_words=max_words)
