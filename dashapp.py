@@ -65,7 +65,7 @@ def makepred(input_text):
     
     
     tokenwords = input_text.split(" ")
-    result = [w for w in inputwords if not w in stop_words] 
+    result = [w for w in tokenwords if not w in stop_words] 
     result = [] 
     for w in tokenwords: 
         if w not in stop_words: 
