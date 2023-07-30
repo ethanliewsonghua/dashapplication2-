@@ -1,0 +1,6 @@
+dash
+pandas
+tensorflow
+keras
+nltk
+re
