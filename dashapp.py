@@ -33,6 +33,7 @@ max_words = 10000
 maxlen = 20
 tokenizer = Tokenizer(num_words=max_words)
 app = dash.Dash(__name__)
+server = app.server
 map_dict = {"m&e":0, "building":1, "acmv":2, "plumbing":3, "av":4,"cleaning":5}
 map_dicts={0: 'm&e', 1: 'building', 2: 'acmv', 3: 'plumbing', 4: 'av', 5: 'cleaning'}
 # Load your NLP model from the H5 file
