@@ -63,7 +63,7 @@ def makepred(input_text):
     input_text = ' '.join(input_text.split())
 
     
-    stop_words = set(stopwords.words('english')) 
+    
     tokenwords = word_tokenize(input_text) 
     result = [w for w in tokenwords if not w in stop_words] 
     result = [] 
