@@ -15,7 +15,7 @@ from keras.preprocessing.text import Tokenizer
 
 import numpy as np
 from keras.models import Sequential
-import nltk
+
 from keras.layers import Embedding
 from keras.layers import Embedding, Conv1D, MaxPooling1D, Flatten, Dense, Dropout, SimpleRNN,BatchNormalization
 from keras.layers import LSTM
@@ -26,9 +26,9 @@ from keras import optimizers
 from keras.layers import Bidirectional, GRU, LSTM, Conv1D
 from keras.optimizers import Nadam
 from keras.layers import Dense, Dropout, Activation, Embedding, Flatten, LSTM,Bidirectional
-from nltk.corpus import stopwords
+
 import re
-from nltk.tokenize import word_tokenize 
+
 my_file = open("stopwords.txt", "r")
   
 # reading the file
@@ -64,8 +64,8 @@ def makepred(input_text):
 
     
     
-    tokenwords = word_tokenize(input_text) 
-    result = [w for w in tokenwords if not w in stop_words] 
+    tokenwords = input_text.split(" ")
+    result = [w for w in inputwords if not w in stop_words] 
     result = [] 
     for w in tokenwords: 
         if w not in stop_words: 
