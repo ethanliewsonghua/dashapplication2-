@@ -12,7 +12,7 @@ import keras
 import tensorflow as tf
 
 from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
+
 import numpy as np
 from keras.models import Sequential
 import nltk
@@ -42,16 +42,7 @@ model2 = tf.keras.models.load_model('model2.h5')
 
 model4 = tf.keras.models.load_model('model4.h5')
 models_list = [model2,model4]
-def get_highest_probability_class(model_list, padded_input_sequence, map_dict):
-    predictions = [model.predict(padded_input_sequence) for model in model_list]
-    averaged_prediction = np.mean(predictions, axis=0)
-    predicted_class = np.argmax(averaged_prediction)
 
-    highest_probability_class = [key for key, value in map_dict.items() if value == predicted_class][0]
-    highest_probability = averaged_prediction[0][predicted_class] * 100
-
-    result = "Class {}: {:.2f}%".format(highest_probability_class, highest_probability)
-    return result
 def makepred(input_text):
     input_text = input_text.lower()
     input_text=input_text.replace('\d+', '') #Remove numbers
@@ -74,7 +65,7 @@ def makepred(input_text):
     input_sequence = tokenizer.texts_to_sequences(input_text)
 
     # Pad the input sequence to make it the same length as the training data
-    padded_input_sequence = pad_sequences(input_sequence, maxlen=maxlen)
+    padded_input_sequence = input_sequence
 
     # Load the saved model
 
