@@ -1,0 +1,44 @@
+/* custom-styles.css */
+
+/* Global styles */
+body {
+    background-color: #f2f2f2; /* Set the background color for the entire page */
+    font-family: Arial, sans-serif; /* Set the font family */
+}
+
+/* Styles for specific components */
+.title {
+    font-size: 2.5em;
+    color: #337ab7;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-textarea {
+    resize: vertical;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.analyze-button {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.prediction-chart {
+    margin-top: 30px;
+}
+
+.result-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
