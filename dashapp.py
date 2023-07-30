@@ -1,6 +1,5 @@
 
-import sys
-sys.path.append('C:/Users/ethan/Desktop/DSCP stuff/Fault Report/Dashapp') 
+
 import dash
 
 from dash import dcc
